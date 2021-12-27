@@ -10,7 +10,7 @@ var message;
 // Program read files every 10 secs, because the txt file is getting lively updated
 setInterval(function() {readFile()}, 10000);
 
-// Here we are listening for an upgrade and creating a HTTP-pathway
+// Program is listening for an upgrade and creating a HTTP-pathway
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
@@ -22,7 +22,8 @@ server.listen(port, hostname, () => {
 });
 
 function readFile() {
-  fs.readFile('C:/Users/kusha/PycharmProjects/pythonProject1/device_count.txt', 'utf8',(err, data) => {
+  // readFile should be set to your file-location of the 'device_count.txt'
+  fs.readFile('C:/Users/<file-location>/device_count.txt', 'utf8',(err, data) => { 
     if (err){
       console.error(err);
       return;
