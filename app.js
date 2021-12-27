@@ -22,7 +22,7 @@ server.listen(port, hostname, () => {
 });
 
 function readFile() {
-  // readFile should be set to your file-location of the 'device_count.txt'
+  // readFile should be set to your file-location of 'device_count.txt'
   fs.readFile('C:/Users/<file-location>/device_count.txt', 'utf8',(err, data) => { 
     if (err){
       console.error(err);
