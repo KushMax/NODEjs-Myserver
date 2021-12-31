@@ -33,7 +33,3 @@ function readFile() {
   })
 
 }
-
-function generateMessage() {
-  message = Math.round(Math.random() * 0xFFFFFF);
-}
