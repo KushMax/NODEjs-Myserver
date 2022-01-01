@@ -5,16 +5,14 @@ const http = require('http');
 const fs = require('graceful-fs');
 const hostname = '127.0.0.1';
 const port = 3000;
-var message;
 
 // Program read files every 10 secs, because the txt file is getting lively updated
 setInterval(function() {readFile()}, 10000);
 
-// Program is listening for an upgrade and creating a HTTP-pathway
+// Here we are listening for an upgrade 3event and creating a HTTP-pathway
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end(message);
 });
 
 server.listen(port, hostname, () => {
@@ -22,14 +20,10 @@ server.listen(port, hostname, () => {
 });
 
 function readFile() {
-  // readFile should be set to your file-location of 'device_count.txt'
-  fs.readFile('C:/Users/<file-location>/device_count.txt', 'utf8',(err, data) => { 
+  fs.readFile('C:/Users/kusha/PycharmProjects/pythonProject1/device_count.txt', 'utf8',(err, data) => {
     if (err){
       console.error(err);
       return;
     }
-    message = data;
-
   })
-
 }
