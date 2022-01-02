@@ -27,5 +27,7 @@ function readFile() {
       console.error(err);
       return;
     }
+    message = data;
+
   })
 }
