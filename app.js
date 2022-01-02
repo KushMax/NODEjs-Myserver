@@ -5,6 +5,7 @@ const http = require('http');
 const fs = require('graceful-fs');
 const hostname = '127.0.0.1';
 const port = 3000;
+var message;
 
 // Program read files every 10 secs, because the txt file is getting lively updated
 setInterval(function() {readFile()}, 10000);
@@ -13,6 +14,7 @@ setInterval(function() {readFile()}, 10000);
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
+  res.end(message);
 });
 
 server.listen(port, hostname, () => {
